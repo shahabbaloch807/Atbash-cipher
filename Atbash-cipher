@@ -1,18 +1,24 @@
-atbash_cipher(text):
+def atbash_cipher(text):
     result = ""
     for char in text:
         if char.isalpha():
             if char.isupper():
-                result += chr(65 + (25 - (ord(char) - 65)))  # A-Z
+                result += chr(65 + (25 - (ord(char) - 65)))
             else:
-                result += chr(97 + (25 - (ord(char) - 97)))  # a-z
+                result += chr(97 + (25 - (ord(char) - 97)))
         else:
-            result += char  # Keep non-letters unchanged
+            result += char
     return result
 
-User input
-text = input("Enter text to encrypt/decrypt: ")
-output = atbash_cipher(text)
+def encrypt(text):
+    return atbash_cipher(text)
 
-print("Output:", output)
+def decrypt(text):
+    return atbash_cipher(text)
 
+text = input("Enter text to encrypt: ")
+encrypted = encrypt(text)
+print("Encrypted:", encrypted)
+
+decrypted = decrypt(encrypted)
+print("Decrypted:", decrypted)

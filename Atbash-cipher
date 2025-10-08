@@ -9,7 +9,6 @@ def atbash(text):
             result += char
     return result
 
-# Simple usage
 text = input("Enter text: ")
 encrypted = atbash(text)
 print("Encrypted:", encrypted)
